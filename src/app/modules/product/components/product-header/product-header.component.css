@@ -1,0 +1,38 @@
+.header {
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(120, 179, 230, 0.508) 0px 8px 24px;
+  border-bottom: solid 1px #dfdfdf;
+  background-color: rgb(5, 68, 119);
+  color: white;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+
+.left {
+  display: flex;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.right {
+  display: flex;
+  gap: 1rem;
+}
+
+.list-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.list-menu li {
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+.list-menu li:hover {
+  color: rgb(39, 123, 148);
+}

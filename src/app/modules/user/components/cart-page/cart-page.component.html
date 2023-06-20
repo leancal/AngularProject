@@ -1,0 +1,70 @@
+<h1 class="title">CARRITO</h1>
+<div class="small-container cart-page">
+  <table>
+    <tr>
+      <th>Producto</th>
+      <th>Categoría</th>
+      <th>Precio</th>
+    </tr>
+    <ng-container>
+      <tr *ngFor="let product of cartProducts" class="product">
+        <td>
+          <div class="cart-info">
+            <img
+             ngSrc="{{
+                'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_' +
+                  product.imagenes[0].nombre +
+                  '.jpg'
+              }}"
+              width="200"
+              height="150"
+              priority
+            />
+            <div>
+              <p>{{ product.nombre.slice(0, 80) + (product.nombre.length > 80 && "...") }}</p>
+              <br />
+              <button
+                class="btn-blue cart-remove"
+                (click)="removeFromCart(product)"
+              >
+                X
+              </button>
+            </div>
+          </div>
+        </td>
+        <td>{{ product.subCategoria }}</td>
+        <td>{{ product.precio | currencyChange }}</td>
+      </tr>
+    </ng-container>
+  </table>
+
+  <div class="total-price">
+    <div class="resumen-container">
+      <h1>RESUMEN</h1>
+
+      <table>
+        <tr>
+          <td>Monto</td>
+          <td>${{ priceSummary.price | currencyChange }}</td>
+        </tr>
+        <tr>
+          <td>Iva</td>
+          <td>+ ${{ priceSummary.iva | currencyChange }}</td>
+        </tr>
+        <tr>
+          <td>Descuentos</td>
+          <td>- $0</td>
+        </tr>
+        <tr>
+          <td>Envío</td>
+          <td>+ $1500</td>
+        </tr>
+        <tr>
+          <td>TOTAL</td>
+          <td>${{ priceSummary.total | currencyChange }}</td>
+        </tr>
+      </table>
+    </div>
+    <div></div>
+  </div>
+</div>

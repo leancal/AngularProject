@@ -1,0 +1,44 @@
+<div class="product-list">
+  <h1>Lista de Productos</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID PRODUCTO</th>
+        <th>IMAGEN</th>
+        <th>NOMBRE</th>
+        <th>PRECIO</th>
+        <th>SUB-CATEGORíA</th>
+        <th>ID SUB-CATEGORíA</th>
+        <th>GARANTíA</th>
+        <th>STOCK</th>
+        <th>VENDIBLE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container>
+        <tr *ngFor="let product of productList">
+          <td>{{ product.id_producto }}</td>
+          <td>
+            <img
+              ngSrc="{{
+                'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_' +
+                  product.imagenes[0].nombre +
+                  '.jpg'
+              }}"
+              width="200"
+              height="150"
+              priority
+            />
+          </td>
+          <td>{{ product.nombre }}</td>
+          <td>{{ product.precio | currencyChange }}</td>
+          <td>{{ product.subCategoria }}</td>
+          <td>{{ product.id_subcategoria }}</td>
+          <td>{{ product.garantia }}</td>
+          <td>{{ product.stock }}</td>
+          <td>{{ product.vendible }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

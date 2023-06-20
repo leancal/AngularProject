@@ -1,0 +1,44 @@
+<header>
+  <nav class="nav">
+    <h1 class="title"><a routerLink="">CHALLANGE</a></h1>
+    <div *ngIf="userName" class="nav-search">
+      ¡Bienvenido {{ userName | titlecase }}!
+    </div>
+    <div *ngIf="!userName" class="nav-search">
+      ¡Disfruta de los mejores precios en nuestra web!
+    </div>
+    <div *ngIf="menuType === 0">
+      <ul>
+        <li><a routerLink="/home">INICIO</a></li>
+        <li><a routerLink="/product/list">PRODUCTOS</a></li>
+        <li><a (click)="loginPage()">MI CUENTA</a></li>
+        <li>
+          <a routerLink="/user/cart"
+            ><mat-icon matBadge="{{ cartItems }}" matBadgeColor="primary"
+              >shopping_cart</mat-icon
+            ></a
+          >
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="menuType === 1">
+      <ul>
+        <li *ngIf="auth === true">
+          <a class="admin" routerLink="/product/list/admin">ADMINISTRADOR</a>
+        </li>
+        <li><a routerLink="/home">INICIO</a></li>
+        <li><a routerLink="/product/list">PRODUCTOS</a></li>
+        <li><a (click)="logout()">CERRAR SESIÓN</a></li>
+
+        <li>
+          <a routerLink="/user/cart"
+            ><mat-icon matBadge="{{ cartItems }}" matBadgeColor="primary"
+              >shopping_cart</mat-icon
+            ></a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+

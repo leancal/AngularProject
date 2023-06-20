@@ -1,0 +1,63 @@
+<main class="container">
+  <app-product-header></app-product-header>
+  <div class="filters-container">
+    <section>
+      <section class="example-section">
+        <h4>Categorías</h4>
+        <p class="categories-list">
+          <ng-container>
+            <mat-checkbox
+              *ngFor="let c of subCategoryList"
+              value="{{ c.nombre }}"
+              #submit
+              (click)="filterByCategories(submit); page = 1"
+              >{{ c.nombre }}</mat-checkbox
+            >
+          </ng-container>
+        </p>
+      </section>
+    </section>
+    <section class="sort-container">
+      <h4>Ordenar</h4>
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <mat-select [(ngModel)]="parameter1">
+          <mat-option (click)="setProducts()">Normal</mat-option>
+          <mat-option value="asc">A-Z</mat-option>
+          <mat-option value="desc">Z-A</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Precio</mat-label>
+        <mat-select [(ngModel)]="parameter2">
+          <mat-option (click)="setProducts()">Normal</mat-option>
+          <mat-option value="desc">Mayor Precio</mat-option>
+          <mat-option value="asc">Menor Precio</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </section>
+  </div>
+  <ng-container *ngIf="productFiltered.length > 0">
+    <div *ngIf="productList" class="cards-container">
+      <app-product-card
+        *ngFor="
+          let product of productFiltered
+            | orderBy : parameter1
+            | sortPrice : parameter2
+            | paginate : { itemsPerPage: 12, currentPage: page }
+        "
+        [product]="product"
+      ></app-product-card>
+    </div>
+    <pagination-controls
+      (pageChange)="page = $event; reset()"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+      class="paginate"
+    ></pagination-controls>
+  </ng-container>
+  <div class="template" *ngIf="productFiltered.length < 1">
+    <p>Por el momento los productos que estás buscando no están disponibles.</p>
+    <p>Probá con otra categoría!</p>
+  </div>
+</main>

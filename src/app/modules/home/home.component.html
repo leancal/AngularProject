@@ -1,0 +1,64 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" alt="Random first slide" class="slider" />
+    </div>
+    <div class="carousel-caption">
+      <h3>CHALLANGE</h3>
+      <p>Angular Basico - Compra Gamer</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<link rel="preconnect" href="https://compragamer.net" />
+<div class="product-list-wrapper">
+  <div class="section-2">
+    <h1 class="populars">Productos Destacados</h1>
+  </div>
+ <ng-container *ngIf="popularProducts">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let product of popularProducts">
+      <div class="product-item">
+        <img
+          ngSrc="{{
+            'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_' +
+              product.imagenes[0].nombre +
+              '-med.jpg'
+          }}"
+          width="200"
+          height="150"
+          priority
+          class="product-image"
+        />
+        <div class="product-details">
+          <h6 class="name-head">
+            {{
+              product.nombre.slice(0, 24) +
+                (product.nombre.length > 24 && "...") | titlecase
+            }}
+          </h6>
+          <div class="product-price">
+            <h4>$ {{ product.precio | currencyChange }}</h4>
+          </div>
+          <div class="product-footer">
+            <button
+              *ngIf="!product.inCart"
+              class="btn-blue cart"
+              (click)="addToCart(product)"
+            >
+              SUMAR AL CARRITO
+            </button>
+            <button
+              *ngIf="product.inCart"
+              class="btn-blue cart-remove"
+              (click)="removeFromCart(product)"
+            >
+              QUITAR DEL CARRITO
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </ng-container>
+</div>

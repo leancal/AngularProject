@@ -1,0 +1,23 @@
+.product-list h1 {
+  color: rgb(4, 46, 79);
+}
+
+table {
+  text-align: center;
+  color: rgb(4, 46, 79);
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+
+table td,
+table th {
+  border: 2px solid rgb(4, 46, 79);
+  padding: 10px;
+  min-width: 150px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+}

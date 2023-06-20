@@ -1,0 +1,170 @@
+.form-container {
+  max-width: 800px;
+  width: 90%;
+  margin: auto;
+  padding: 40px;
+}
+
+.form-container h1 {
+  display: flex;
+  justify-content: center;
+  color: rgb(5, 68, 119);
+  font-weight: bold;
+  margin-bottom: 50px;
+  font-size: 40px;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form__label {
+  display: block;
+  font-weight: 700;
+  padding: 10px;
+}
+
+.form__group-input {
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  border: 2px solid rgb(5, 68, 119);
+  border-radius: 3px;
+  height: 45px;
+  line-height: 45px;
+  padding: 0 40px 0 10px;
+  transition: 0.3s ease all;
+  outline: none;
+}
+
+.form__input:focus {
+  box-shadow: 1px 0px 15px rgb(31, 132, 214);
+}
+
+.form__input-error {
+  font-size: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: rgba(255, 4, 4, 0.834);
+  margin-top: 5px;
+}
+.form__input-error2 {
+  font-size: 15px;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: transparent;
+  margin-top: 5px;
+  user-select: none;
+}
+
+.form__validation-error {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  font-size: 20px;
+  z-index: 100;
+  color: rgb(215, 21, 21);
+}
+.form__validation-check {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  font-size: 20px;
+  z-index: 100;
+  color: #1ed12d;
+}
+
+.form__checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.form__group-admin {
+  display: flex;
+  justify-content: center;
+}
+
+.form__group-admin,
+.form__message-error,
+.form__message-success,
+.form__group-btn,
+.form__message-advice {
+  grid-column: span 2;
+}
+
+.form__message-error {
+  height: 45px;
+  line-height: 45px;
+  font-size: 15px;
+  padding: 0 15px;
+  background-color: rgba(246, 254, 6, 0.438);
+  border-radius: 3px;
+  color: rgb(110, 115, 9);
+  display: flex;
+  justify-content: center;
+}
+
+.form__message-error b {
+  margin-left: 10px;
+}
+
+.form__message-success {
+  height: 45px;
+  line-height: 45px;
+  font-size: 20px;
+  padding: 0 15px;
+  background-color: rgba(27, 219, 27, 0.526);
+  border-radius: 3px;
+  color: green;
+  display: flex;
+  justify-content: center;
+}
+
+.form__message-success b {
+  margin-right: 10px;
+}
+.form__message-advice {
+  height: 45px;
+  line-height: 45px;
+  font-size: 20px;
+  padding: 0 15px;
+  border-radius: 3px;
+  color: rgb(5, 68, 119);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.form__message-advice b {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.form__message-advice p:hover {
+  color: rgb(31, 132, 214);
+}
+
+.form__group-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form__group-btn button {
+  height: 50px;
+  line-height: 30px;
+  width: 40%;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(5, 68, 119);
+  color: #ddd;
+  margin-bottom: 10px;
+}
+
+.form__group-btn button:hover {
+  background-color: rgb(7, 114, 201);
+  color: #ddd;
+}

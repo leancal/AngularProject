@@ -1,0 +1,24 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+    font-family: Open Sans;
+}
+
+.btn-blue {
+    background-color: #156DBF;
+    color: white;
+    border-radius: .2rem;
+    border: none;
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.46);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.46);
+    box-shadow: 0px 4px 4px 0px #156DBF;
+    padding: .3rem .7rem;
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+.btn-blue:hover {
+    background-color: #2589e6;
+    transition: 0.15s
+}

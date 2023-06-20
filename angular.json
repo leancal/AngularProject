@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "compragamer": {
+    "compra-gamer-challange": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "sass"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,22 +13,25 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/compragamer",
+            "outputPath": "dist/compra-gamer-challange",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/hammerjs/hammer.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -65,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "compragamer:build:production"
+              "browserTarget": "compra-gamer-challange:build:production"
             },
             "development": {
-              "browserTarget": "compragamer:build:development"
+              "browserTarget": "compra-gamer-challange:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "compragamer:build"
+            "browserTarget": "compra-gamer-challange:build"
           }
         },
         "test": {
@@ -87,13 +86,13 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "sass",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -102,6 +101,6 @@
     }
   },
   "cli": {
-    "analytics": "50249ea6-3029-4f34-af58-edcb360dcf0e"
+    "analytics": false
   }
 }

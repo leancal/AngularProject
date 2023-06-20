@@ -1,0 +1,46 @@
+.cards-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  grid-template-columns: repeat(4, minmax(254px, 254px));
+  grid-auto-rows: minmax(300px, auto);
+  gap: 20px;
+}
+
+.paginate {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ccc;
+}
+
+.sort-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categories-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(235px, 235px));
+  grid-auto-rows: minmax(25px, auto);
+}
+
+.template {
+  display: initial;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
